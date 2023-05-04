@@ -2,8 +2,7 @@
   <button
     mat-icon-button
     *ngIf="sidenav.mode === 'over'"
-    (click)="sidenav.toggle()"
-  >
+    (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
@@ -75,22 +74,20 @@
           <br><br>
           <mat-card>
           <a>
-             <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon>
+             <mat-icon>design_services</mat-icon>
             <span matLine class="content">Add color</span>
             <input [(colorPicker)]="selectedColor" [style.background]="selectedColor"  />
-            
-            <!--<input [value]="selectedColor" (change)="onColorChange($event.target.value)" />            <br><br>
-            <color-picker [style.width]="'10px'" [style.height]="'10px'" [(ngModel)]="selectedColor"></color-picker>
-            <div [style.background-color]="selectedColor" style="width: 10px; height: 10px;">
-            </div>-->
+
           </a>
           </mat-card>
           </mat-nav-list>  
         </div>
         <div id="right">
+          
           <mat-card>
           <a>
             <qrcode
+          
           [qrdata]="qrData"
           [allowEmptyString]="true"
           [ariaLabel]="'qrData'"
@@ -104,16 +101,22 @@
           [imageWidth]="35"
           [margin]="4"
           [scale]="2"
-          [title]="'A custom title attribute'"
-          [width]="200">
-            </qrcode>
-
-            <mat-card-actions>
-            <button mat-icon-button ><mat-icon >share</mat-icon></button>
-            <button mat-icon-button (click)="downloadImage()"><mat-icon>download</mat-icon></button>
-            <button mat-raised-button color="accent">Accent</button>
-          </mat-card-actions>
-          </a>
+          [title]="'Qr code'"
+          [width]="200"
+          
+       (qrCodeURL)="onChangeURL($event)" 
+          >
+        </qrcode>
+        
+        <a [href]="qrCodeDownloadLink" download="qrcode">Download</a>
+       <zxing-scanner
+            (scanSuccess)="onCodeResult($event)"
+            (scanSuccess)="onCodeResultx($event)"
+      ></zxing-scanner><br>
+              <strong>Scan Result</strong><br>
+              <small>Scaned Text : {{result}}</small><br>
+              <small>Scan Count: {{scanCount}}</small><br>
+            </a>
           </mat-card>
         </div>
       </div>

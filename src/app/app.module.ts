@@ -17,13 +17,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { ZXingScannerModule } from '@zxing/ngx-scanner'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,9 +46,9 @@ import { ColorPickerModule } from 'ngx-color-picker';
     MatDividerModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    
-    
+    HttpClientModule, 
+    ZXingScannerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
