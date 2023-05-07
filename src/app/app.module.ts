@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QRCodeModule } from 'angularx-qrcode';
@@ -17,8 +17,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { ZXingScannerModule } from '@zxing/ngx-scanner'
-
+//import { ZXingScannerModule } from '@zxing/ngx-scanner'
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode'
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner'
     MatToolbarModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule,
     MatSidenavModule,
     MatListModule,
     ColorPickerModule,
@@ -47,7 +46,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner'
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule, 
-    ZXingScannerModule
+    NgxScannerQrcodeModule
 
   ],
   providers: [],
